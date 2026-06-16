@@ -19,7 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const refreshBtn = document.getElementById('refresh-btn');
     const refreshIcon = document.getElementById('refresh-icon');
     const exportCsvBtn = document.getElementById('export-csv-btn');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeToggleIcon = document.getElementById('theme-toggle-icon');
     const statusText = document.getElementById('status-text');
+    
+    // Theme initialization
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-theme');
+        if (themeToggleIcon) {
+            themeToggleIcon.className = 'fa-solid fa-moon';
+        }
+    } else {
+        document.body.classList.remove('light-theme');
+        if (themeToggleIcon) {
+            themeToggleIcon.className = 'fa-solid fa-sun';
+        }
+    }
     const loadingOverlay = document.getElementById('loading-overlay');
     const errorState = document.getElementById('error-state');
     const errorMessage = document.getElementById('error-message');
@@ -353,6 +369,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 7. Event Listeners
+    
+    // Theme Toggle click
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = document.body.classList.toggle('light-theme');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            
+            if (themeToggleIcon) {
+                themeToggleIcon.className = isLight ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+            }
+            
+            if (selectedNote) {
+                updateCharCount();
+            }
+            showToast(`Theme switched to ${isLight ? 'Light' : 'Dark'} Mode`);
+        });
+    }
     
     // Export CSV Button click
     if (exportCsvBtn) {

@@ -37,6 +37,9 @@
                 <span class="status-indicator" id="status-text">
                     <span class="pulse-dot"></span> Loading feed...
                 </span>
+                <button id="theme-toggle-btn" class="btn btn-secondary btn-icon" title="Toggle theme (Light / Dark)">
+                    <i class="fa-solid fa-sun" id="theme-toggle-icon"></i>
+                </button>
                 <button id="export-csv-btn" class="btn btn-secondary btn-icon" title="Export current filtered view to CSV">
                     <i class="fa-solid fa-file-csv"></i>
                     <span>Export CSV</span>
@@ -194,7 +197,7 @@
                         <div class="composer-footer">
                             <div class="char-counter-group">
                                 <svg class="progress-ring" width="28" height="28">
-                                    <circle class="progress-ring__circle-bg" stroke="#2f3336" stroke-width="2.5" fill="transparent" r="11" cx="14" cy="14"/>
+                                    <circle class="progress-ring__circle-bg" stroke="var(--progress-bg)" stroke-width="2.5" fill="transparent" r="11" cx="14" cy="14"/>
                                     <circle class="progress-ring__circle" id="char-progress-circle" stroke="#1d9bf0" stroke-width="2.5" fill="transparent" r="11" cx="14" cy="14"/>
                                 </svg>
                                 <span id="char-count" class="char-count-text">280</span>

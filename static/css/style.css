@@ -14,6 +14,8 @@
     --text-secondary: #9ca3af;
     --text-muted: #6b7280;
     
+    --progress-bg: #2f3336;
+    
     /* Brand & Accent Colors */
     --google-blue: #4285f4;
     --google-blue-hover: #357ae8;
@@ -52,6 +54,34 @@
     /* Transitions */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light-theme {
+    --bg-primary: #f3f4f6;       /* Gray 100 */
+    --bg-secondary: #ffffff;     /* White */
+    --bg-tertiary: #f9fafb;      /* Gray 50 */
+    --bg-accent: #e5e7eb;        /* Gray 200 */
+    
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(0, 0, 0, 0.16);
+    
+    --text-primary: #111827;     /* Gray 900 */
+    --text-secondary: #4b5563;   /* Gray 600 */
+    --text-muted: #9ca3af;       /* Gray 400 */
+    
+    --progress-bg: #e5e7eb;
+}
+
+body.light-theme .html-content-card p {
+    color: var(--text-secondary);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
 
 /* Reset & Base Styles */

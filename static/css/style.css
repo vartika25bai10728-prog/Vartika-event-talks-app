@@ -540,9 +540,35 @@ body {
 .badge.Deprecation { background-color: var(--color-deprecation-glow); color: var(--color-deprecation); }
 .badge.General { background-color: var(--color-other-glow); color: var(--color-other); }
 
+.card-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .card-date {
     font-size: 12px;
     color: var(--text-muted);
+}
+
+.btn-card-copy {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.btn-card-copy:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.btn-card-copy.success {
+    color: var(--color-feature);
 }
 
 .card-body {
